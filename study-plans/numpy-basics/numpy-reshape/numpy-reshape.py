@@ -10,4 +10,4 @@ def reshape_array(data: list, operation: str) -> np.ndarray:
         t=np.array(data,dtype=np.float64).T
         return t
     else:
-        return np.array([data],dtype=np.float64)
+        return np.expand_dims(np.array(data,dtype=np.float64),axis=0)
