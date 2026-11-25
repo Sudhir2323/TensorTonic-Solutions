@@ -4,5 +4,6 @@ def filter_and_extract(data: list, row_start: int, row_stop: int, threshold: flo
     """
     Returns matching values in row-major order as a 1D float64 array.
     """
-    arr=np.array(data,dtype=np.float64)
-    return np.extract(arr[row_start:row_stop,:]>threshold,arr[row_start:row_stop,:])
+    arr=np.array(data,dtype=np.float64)[row_start:row_stop,]
+    
+    return arr[arr>threshold]
