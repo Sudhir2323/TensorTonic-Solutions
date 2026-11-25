@@ -5,5 +5,5 @@ def original_and_clipped(data: list, row_idx: int, lo: float, hi: float) -> np.n
     Returns a (2, n) float64 array: original row, then clipped row.
     """
     arr=np.array(data,dtype=np.float64)[row_idx]
-    return np.array([arr,np.select([arr<lo,arr>hi],[lo,hi],default=arr)])
+    return np.stack([arr,np.clip(arr,lo,hi)])
     
